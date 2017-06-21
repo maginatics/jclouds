@@ -66,9 +66,14 @@ public class Region {
    public static final String US_STANDARD = "us-standard";
 
    /**
-    * 
+    * US-East-1 (N. Virginia)
     */
    public static final String US_EAST_1 = "us-east-1";
+
+   /**
+    * US-East-2 (Ohio)
+    */
+    public static final String US_EAST_2 = "us-east-2";
 
    /**
     * US-West (Northern California) <h3>S3</h3> Uses Amazon S3 servers in Northern California
@@ -121,10 +126,10 @@ public class Region {
     */
    public static final String AP_NORTHEAST_2 = "ap-northeast-2";
 
-   public static final Set<String> DEFAULT_S3 = ImmutableSet.of(US_STANDARD, US_WEST_1, US_WEST_2, EU_WEST_1, EU_CENTRAL_1, SA_EAST_1,
+   public static final Set<String> DEFAULT_S3 = ImmutableSet.of(US_STANDARD, US_EAST_2, US_WEST_1, US_WEST_2, EU_WEST_1, EU_CENTRAL_1, SA_EAST_1,
          AP_SOUTHEAST_1, AP_SOUTHEAST_2, AP_SOUTH_1, AP_NORTHEAST_1, AP_NORTHEAST_2);
 
-   public static final Set<String> DEFAULT_REGIONS = ImmutableSet.of(US_EAST_1, US_WEST_1, US_WEST_2, SA_EAST_1,
+   public static final Set<String> DEFAULT_REGIONS = ImmutableSet.of(US_EAST_1, US_EAST_2, US_WEST_1, US_WEST_2, SA_EAST_1,
          EU_WEST_1, EU_CENTRAL_1, AP_SOUTHEAST_1, AP_SOUTHEAST_2, AP_SOUTH_1, AP_NORTHEAST_1, AP_NORTHEAST_2);
 
    public static Properties regionPropertiesS3() {
@@ -132,7 +137,7 @@ public class Region {
       Properties properties = regionProperties();
       properties.setProperty(PROPERTY_REGIONS, Joiner.on(',').join(DEFAULT_S3));
       // note that due to US_STANDARD the codes include US instead of US-VA
-      properties.setProperty(PROPERTY_ISO3166_CODES, "US,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
+      properties.setProperty(PROPERTY_ISO3166_CODES, "US,US_OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
       properties.setProperty(PROPERTY_REGION + "." + US_STANDARD + "." + ISO3166_CODES, "US");
       return properties;
    }
@@ -140,8 +145,9 @@ public class Region {
    public static Properties regionProperties() {
       Properties properties = new Properties();
       properties.setProperty(PROPERTY_REGIONS, Joiner.on(',').join(DEFAULT_REGIONS));
-      properties.setProperty(PROPERTY_ISO3166_CODES, "US-VA,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
+      properties.setProperty(PROPERTY_ISO3166_CODES, "US-VA,US_OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
       properties.setProperty(PROPERTY_REGION + "." + US_EAST_1 + "." + ISO3166_CODES, "US-VA");
+      properties.setProperty(PROPERTY_REGION + "." + US_EAST_2 + "." + ISO3166_CODES, "US-OH");
       properties.setProperty(PROPERTY_REGION + "." + US_WEST_1 + "." + ISO3166_CODES, "US-CA");
       properties.setProperty(PROPERTY_REGION + "." + US_WEST_2 + "." + ISO3166_CODES, "US-OR");
       properties.setProperty(PROPERTY_REGION + "." + SA_EAST_1 + "." + ISO3166_CODES, "BR-SP");
