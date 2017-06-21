@@ -43,6 +43,7 @@ public class AWSS3ServiceIntegrationLiveTest extends S3ServiceIntegrationLiveTes
             "SG",
             "US",
             "US-CA",
+            "US-OH",
             "US-OR");
    }
 
