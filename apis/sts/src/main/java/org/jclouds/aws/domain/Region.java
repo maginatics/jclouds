@@ -137,7 +137,7 @@ public class Region {
       Properties properties = regionProperties();
       properties.setProperty(PROPERTY_REGIONS, Joiner.on(',').join(DEFAULT_S3));
       // note that due to US_STANDARD the codes include US instead of US-VA
-      properties.setProperty(PROPERTY_ISO3166_CODES, "US,US_OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
+      properties.setProperty(PROPERTY_ISO3166_CODES, "US,US-OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
       properties.setProperty(PROPERTY_REGION + "." + US_STANDARD + "." + ISO3166_CODES, "US");
       return properties;
    }
@@ -145,7 +145,7 @@ public class Region {
    public static Properties regionProperties() {
       Properties properties = new Properties();
       properties.setProperty(PROPERTY_REGIONS, Joiner.on(',').join(DEFAULT_REGIONS));
-      properties.setProperty(PROPERTY_ISO3166_CODES, "US-VA,US_OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
+      properties.setProperty(PROPERTY_ISO3166_CODES, "US-VA,US-OH,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11");
       properties.setProperty(PROPERTY_REGION + "." + US_EAST_1 + "." + ISO3166_CODES, "US-VA");
       properties.setProperty(PROPERTY_REGION + "." + US_EAST_2 + "." + ISO3166_CODES, "US-OH");
       properties.setProperty(PROPERTY_REGION + "." + US_WEST_1 + "." + ISO3166_CODES, "US-CA");

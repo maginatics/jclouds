@@ -99,7 +99,7 @@ public class AWSS3ProviderMetadata extends BaseProviderMetadata {
          .homepage(URI.create("http://aws.amazon.com/s3"))
          .console(URI.create("https://console.aws.amazon.com/s3/home"))
          .linkedServices("aws-ec2", "aws-elb", "aws-cloudwatch", "aws-s3", "aws-simpledb")
-         .iso3166Codes("US", "US_OH", "US-CA", "US-OR", "BR-SP", "IE", "DE-HE", "SG", "AU-NSW", "IN-MH", "JP-13", "KR-11")
+         .iso3166Codes("US", "US-OH", "US-CA", "US-OR", "BR-SP", "IE", "DE-HE", "SG", "AU-NSW", "IN-MH", "JP-13", "KR-11")
          .defaultProperties(AWSS3ProviderMetadata.defaultProperties());
       }
 
