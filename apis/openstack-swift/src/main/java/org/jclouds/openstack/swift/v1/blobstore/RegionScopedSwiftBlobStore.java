@@ -85,7 +85,6 @@ import org.jclouds.openstack.swift.v1.blobstore.functions.ToBlobMetadata;
 import org.jclouds.openstack.swift.v1.blobstore.functions.ToListContainerOptions;
 import org.jclouds.openstack.swift.v1.blobstore.functions.ToResourceMetadata;
 import org.jclouds.openstack.swift.v1.domain.Container;
-import org.jclouds.openstack.swift.v1.domain.DeleteStaticLargeObjectResponse;
 import org.jclouds.openstack.swift.v1.domain.ObjectList;
 import org.jclouds.openstack.swift.v1.domain.Segment;
 import org.jclouds.openstack.swift.v1.domain.SwiftObject;
