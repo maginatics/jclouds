@@ -386,14 +386,8 @@ public class RegionScopedSwiftBlobStore implements BlobStore {
 
    @Override
    public void removeBlob(String container, String name) {
-      // Multipart objects have a manifest which points to subobjects.  Normally
-      // deleting a object only deletes the manifest, leaving the subobjects.
-      // We first try a multipart delete and if that fails since the object is
-      // not an MPU we fall back to single-part delete.
-      DeleteStaticLargeObjectResponse response = api.getStaticLargeObjectApi(regionId, container).delete(name);
-      if (!response.status().equals("200 OK")) {
-         api.getObjectApi(regionId, container).delete(name);
-      }
+      // Use single-part delete instead of SLO delete because its buggy(NPE).
+      api.getObjectApi(regionId, container).delete(name);
    }
 
    /**
